@@ -34,8 +34,8 @@ def main() -> None:
 
     if args.task:
         log_user(args.task)
-        result = agent.run_task(args.task)
-        log_assistant_text(result)
+        agent.run_task(args.task)
+        # log_assistant_text(result)
         return
 
     log_system("已进入交互模式，输入任务描述后回车执行；输入 exit / quit 退出。")
@@ -54,8 +54,8 @@ def main() -> None:
             break
 
         try:
-            result = agent.run_task(user_input)
-            log_assistant_text(result)
+            agent.run_task(user_input)
+            # log_assistant_text(result)
         except KeyboardInterrupt:
             log_system("已中断当前任务（未退出程序），可以继续输入下一个任务。")
 
